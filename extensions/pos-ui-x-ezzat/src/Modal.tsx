@@ -50,7 +50,7 @@ const Modal = () => {
               <Text>Email: {customer?.defaultEmailAddress?.emailAddress}</Text>
               <Text>Phone: {customer?.defaultPhoneNumber?.phoneNumber}</Text>
               <Text>Tags: {customer?.tags?.join(', ')}</Text>
-              <Text>Total Spent: {customer?.totalSpent?.amount}</Text>
+              <Text>Total Spent: {customer?.amountSpent?.amount}</Text>
               <Text>Address: {customer?.defaultAddress?.address1}, {customer?.defaultAddress?.city}, {customer?.defaultAddress?.country}</Text>
             </>
           ) : (
