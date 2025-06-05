@@ -1,43 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Text, Screen, ScrollView, Navigator, reactExtension, useApi } from '@shopify/ui-extensions-react/point-of-sale';
+import React from 'react';
+import { Text, Screen, ScrollView, Navigator, reactExtension } from '@shopify/ui-extensions-react/point-of-sale';
+import { CustomerProvider, useCustomer } from './context/CustomerContext';
 
-const Modal = () => {
-  const api = useApi<'pos.customer-details.action.render'>();
-  const customerId = api.customer.id;
-  const [customer, setCustomer] = useState(null);
+const ModalContent = () => {
+  const { customer, isLoading } = useCustomer();
 
-  useEffect(() => {
-    async function fetchCustomerDetails() {
-      try {
-        const response = await fetch('/api/customer-details', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            customerId
-          }),
-        });
-        
-        const result = await response.json();
-        if (result.error) {
-          console.error('Error fetching customer details:', result.error);
-          return;
-        }
-        
-        setCustomer(result.data.customer);
-      } catch (error) {
-        console.error('Error fetching customer details:', error);
-      }
-    }
-
-    if (customerId) {
-      fetchCustomerDetails();
-    }
-  }, [customerId]);
-
-  // log customer
-  console.log("customer:", customer);
+  if (isLoading) {
+    return (
+      <Navigator>
+        <Screen name="Loading" title="Loading Customer Details">
+          <Text>Loading customer details...</Text>
+        </Screen>
+      </Navigator>
+    );
+  }
 
   return (
     <Navigator>
@@ -61,5 +37,11 @@ const Modal = () => {
     </Navigator>
   );
 };
+
+const Modal = () => (
+  <CustomerProvider>
+    <ModalContent />
+  </CustomerProvider>
+);
 
 export default reactExtension('pos.home.modal.render', () => <Modal />);
