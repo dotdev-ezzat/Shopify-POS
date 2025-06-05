@@ -46,13 +46,12 @@ const Modal = () => {
           <Text>Ezzat X POS Extension</Text>
           {customer ? (
             <>
-              <Text>Name: {customer.firstName} {customer.lastName}</Text>
-              <Text>Email: {customer.email}</Text>
-              <Text>Phone: {customer.phone}</Text>
-              <Text>Tags: {customer.tags.join(', ')}</Text>
-              <Text>Orders: {customer.ordersCount}</Text>
-              <Text>Total Spent: {customer.totalSpent}</Text>
-              <Text>Address: {customer.defaultAddress?.address1}, {customer.defaultAddress?.city}, {customer.defaultAddress?.country}</Text>
+              <Text>Name: {customer?.firstName} {customer?.lastName}</Text>
+              <Text>Email: {customer?.defaultEmailAddress?.emailAddress}</Text>
+              <Text>Phone: {customer?.defaultPhoneNumber?.phoneNumber}</Text>
+              <Text>Tags: {customer?.tags?.join(', ')}</Text>
+              <Text>Total Spent: {customer?.totalSpent?.amount}</Text>
+              <Text>Address: {customer?.defaultAddress?.address1}, {customer?.defaultAddress?.city}, {customer?.defaultAddress?.country}</Text>
             </>
           ) : (
             <Text>Loading customer details...</Text>
