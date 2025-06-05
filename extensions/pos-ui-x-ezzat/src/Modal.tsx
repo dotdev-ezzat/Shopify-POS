@@ -36,6 +36,9 @@ const Modal = () => {
     }
   }, [customerId]);
 
+  // log customer
+  console.log("customer:", customer);
+
   return (
     <Navigator>
       <Screen name="HelloWorld" title="Ezzat X POS Extension">
