@@ -18,3 +18,7 @@ target = "pos.home.tile.render"
 [[extensions.targeting]]
 module = "./src/Modal.tsx"
 target = "pos.home.modal.render"
+
+[[extensions.targeting]]
+module = "./src/CustomerBlock.tsx"
+target = "pos.customer-details.block.render"

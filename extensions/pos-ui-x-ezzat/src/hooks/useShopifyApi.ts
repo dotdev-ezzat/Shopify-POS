@@ -22,10 +22,14 @@ export const useShopifyApi = () => {
         }),
       }).then((res) => res.json());
 
+      console.log("data", data)
+
       return data;
     },
     [api.session.currentSession.shopDomain]
   );
+
+  console.log("shopifyApi", shopifyApi)
 
   return { shopifyApi };
 };
