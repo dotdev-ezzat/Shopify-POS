@@ -22,3 +22,11 @@ target = "pos.home.modal.render"
 [[extensions.targeting]]
 module = "./src/CustomerBlock.tsx"
 target = "pos.customer-details.block.render"
+
+[[extensions.targeting]]
+module = "./src/CustomerTile.tsx"
+target = "pos.customer-details.action.menu-item.render"
+
+[[extensions.targeting]]
+module = "./src/CustomerTileDetails.tsx"
+target = "pos.customer-details.action.render"

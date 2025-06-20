@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Screen, ScrollView, Navigator, reactExtension } from '@shopify/ui-extensions-react/point-of-sale';
 
 const Modal = () => {
+  console.log("Modal")
   return (
     <Navigator>
       <Screen name="ModalContent" title="Modal Content">

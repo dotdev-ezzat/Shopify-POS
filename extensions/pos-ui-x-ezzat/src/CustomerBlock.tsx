@@ -10,7 +10,7 @@ import { CustomerProvider, useCustomer } from './context/CustomerContext';
 const BlockContent = () => {
   const api = useApi<'pos.customer-details.block.render'>();
   const { customer, isLoading } = useCustomer();
-
+  console.log("customer: ", customer)
   return (
     <POSBlock action={{ title: 'View Details', onPress: api.action.presentModal }}>
       <POSBlockRow>

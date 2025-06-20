@@ -66,6 +66,8 @@ export const CustomerProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         },
       });
 
+      console.log("result", result)
+
       if (result.errors) {
         console.error('GraphQL errors:', result.errors);
         return;
