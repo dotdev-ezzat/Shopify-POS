@@ -1,0 +1,21 @@
+query Input {
+  cart {
+    lines {
+      id
+      quantity
+      custom_image_attribute: attribute(key: "custom_image_attribute") {
+        value
+      }
+      merchandise {
+        ... on ProductVariant {
+          product {
+            title
+          }
+        }
+        ... on CustomProduct {
+          title
+        }
+      }
+    }
+  }
+}
