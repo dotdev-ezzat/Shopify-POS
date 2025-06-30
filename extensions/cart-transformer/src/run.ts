@@ -50,7 +50,14 @@ function optionallyBuildUpdateOperation(cartLine) {
       image: {
         url: cartLine.custom_image_attribute.value
       },
-      title: "Bundle title updated"
+      price: {
+        adjustment: {
+          fixedPricePerUnit: {
+            amount: cartLine.cost.amountPerQuantity.amount - 100.00,
+          },
+        },
+      },
+      title: "Product title updated and discounted"
     };
   }
 

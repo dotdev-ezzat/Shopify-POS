@@ -6,6 +6,11 @@ query Input {
       custom_image_attribute: attribute(key: "custom_image_attribute") {
         value
       }
+      cost {
+        amountPerQuantity {
+          amount
+        }
+      }
       merchandise {
         ... on ProductVariant {
           product {

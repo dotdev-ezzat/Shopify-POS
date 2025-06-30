@@ -3,7 +3,7 @@
 client_id = "82a1d348c3bd88a273be15dfce93daf7"
 name = "POS-x-Ezzat"
 handle = "pos-x-ezzat"
-application_url = "https://numerical-foot-ridge-passenger.trycloudflare.com"
+application_url = "https://thumbnail-communities-pool-mapping.trycloudflare.com"
 embedded = true
 
 [build]
@@ -23,13 +23,13 @@ api_version = "2025-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customers,read_discounts,read_gift_cards,read_inventory,read_locations,read_orders,read_products,write_cart_transforms,write_customers,write_gift_cards,write_orders"
+scopes = "read_customers,read_discounts,read_gift_cards,read_inventory,read_locations,read_orders,read_products,write_cart_transforms,write_customers,write_gift_cards,write_orders,write_cart_transforms,write_products"
 
 [auth]
 redirect_urls = [
-  "https://numerical-foot-ridge-passenger.trycloudflare.com/auth/callback",
-  "https://numerical-foot-ridge-passenger.trycloudflare.com/auth/shopify/callback",
-  "https://numerical-foot-ridge-passenger.trycloudflare.com/api/auth/callback"
+  "https://thumbnail-communities-pool-mapping.trycloudflare.com/auth/callback",
+  "https://thumbnail-communities-pool-mapping.trycloudflare.com/auth/shopify/callback",
+  "https://thumbnail-communities-pool-mapping.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
